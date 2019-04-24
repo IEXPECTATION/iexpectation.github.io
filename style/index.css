@@ -1,0 +1,37 @@
+/* this is the stylesheet of index.html */
+/* all the stylesheet of index.html will be written down in here */
+
+
+/*title*/
+h1{
+    text-align:center;
+}
+
+/* */
+/*.main{
+    
+}
+*/
+
+/*set the stylesheet of list*/
+.conv{
+    float: left;
+    border: 1px dashed black;
+    width: 100px;
+    font-size: 12px;
+    background-color: pink;
+}
+
+.conv ul{
+    padding: 0 0 0 15px;
+}
+
+.conv ul a{
+    text-decoration: none;
+    color:black;
+}
+
+.conv ul a:hover{
+    text-decoration: underline;
+    color:purple;
+}
