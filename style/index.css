@@ -15,9 +15,7 @@ h1{
 
 /*set the stylesheet of list*/
 .conv{
-    float: left;
     border: 1px dashed black;
-    width: 100px;
     font-size: 12px;
     background-color: pink;
 }
