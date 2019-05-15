@@ -23,7 +23,9 @@ h1{
 }
 
 .conv ul{
+    float: left;
     list-style-type: none;
+    display: block;
 }
 
 .conv ul a{
