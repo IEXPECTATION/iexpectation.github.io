@@ -3,7 +3,10 @@
 
 
 /*title*/
-h1{
+header{
+    color: white;
+    background: black;
+    font-size: 45px;
     text-align:center;
 }
 
@@ -16,22 +19,27 @@ h1{
 /*set the stylesheet of list*/
 .conv{
     border: 1px dashed black;
-    font-size: 12px;
+    width: 100%;
+    height: 50px;
+    font-size: 15px;
     background-color: pink;
 }
 
-.conv ul{
+.conv a{
+    width: 16%;
     float: left;
-    list-style-type: none;
     display: block;
-}
-
-.conv ul a{
+    text-align: center;
     text-decoration: none;
     color:black;
 }
 
-.conv ul a:hover{
+.conv a:hover{
     text-decoration: underline;
     color:purple;
+}
+
+.conv a:visited{
+    text-decoration: underline;
+    color: purple;
 }
