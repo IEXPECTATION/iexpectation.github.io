@@ -45,7 +45,7 @@
     line-height: 100px;
 }
 
-.menu a:hover, .show-menu-btn, .hide-menu-btn{
+.conv a:hover, .show-menu-btn, .hide-menu-btn{
     color: #3498db;
 }
 
@@ -60,20 +60,20 @@
         display: block;
     }
 
-    .menu{
+    .conv{
         position: fixed;
-        width: 100%;
+        width: 300px;
         height: 100vh;
         background: #333;
         right: -100%;
         top: 0;
         text-align: center;
-        padding: 80px;
+        padding: 80px 0;
         line-height: normal;
         transition: 0.7s;
     }
 
-    .menu a{
+    .conv a{
         display: block;
         padding: 20px;
     }
@@ -84,7 +84,7 @@
         right: 40px;
     }
 
-    #chk:checked ~ .menu{
+    #chk:checked ~ .conv{
         right: 0;
     }
 }
