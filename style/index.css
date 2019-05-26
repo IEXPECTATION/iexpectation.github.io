@@ -55,7 +55,7 @@
     z-index: -1111;
 }
 
-@media screen and (max-width:800){
+@media screen and (max-width:800px){
     .show-menu-btn, .hide-menu-btn{
         display: block;
     }
