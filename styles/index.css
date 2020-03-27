@@ -1,66 +1,66 @@
 /* This is the stylesheet of index.html */
 /* This CSS is created by DarkCode, their facebook: https://www.facebook.com/groups/704904666369941 */
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.header{
+.header {
     height: 100px;
-    background: #34495e;
+    background: #354a5f;
     padding: 0 20px;
     color: #fff;
 }
 
-.logo{
+.logo {
     line-height: 100px;
     float: left;
 }
 
-.conv{
+.conv {
     line-height: 100px;
     float: right;
 }
 
-.conv a{
+.conv a {
     color: #fff;
     text-decoration: none;
     padding: 0 10px;
     transition: 0.4s;
 }
 
-.show-menu-btn, .hide-menu-btn{
+.show-menu-btn, .hide-menu-btn {
     transition: 0.4s;
     font-size: 30px;
     cursor: pointer;
     display: none;
 }
 
-.show-menu-btn{
+.show-menu-btn {
     float: right;
 }
 
-.show-menu-btn i{
+.show-menu-btn i {
     line-height: 100px;
 }
 
-.conv a:hover, .show-menu-btn, .hide-menu-btn{
+.conv a:hover, .show-menu-btn, .hide-menu-btn {
     color: #3498db;
 }
 
-#chk{
+#chk {
     position: absolute;
     visibility: hidden;
     z-index: -1111;
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:800px) {
     .show-menu-btn, .hide-menu-btn{
         display: block;
     }
 
-    .conv{
+    .conv {
         position: fixed;
         width: 60%;
         height: 100vh;
@@ -73,18 +73,18 @@
         transition: 0.7s;
     }
 
-    .conv a{
+    .conv a {
         display: block;
         padding: 20px;
     }
 
-    .hide-menu-btn{
+    .hide-menu-btn {
         position: absolute;
         top: 40px;
         right: 40px;
     }
 
-    #chk:checked ~ .conv{
+    #chk:checked ~ .conv {
         right: 0;
     }
 }
