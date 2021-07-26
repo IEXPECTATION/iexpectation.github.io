@@ -21,6 +21,7 @@
 .conv {
     line-height: 100px;
     float: right;
+    z-index: 10;
 }
 
 .conv a {

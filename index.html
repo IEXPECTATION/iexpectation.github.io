@@ -7,6 +7,87 @@
   <link rel="stylesheet" href="/styles/FontAwesome/css/all.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <title>My Blog</title>
+  <style>
+    html {
+      background: #EEEEEE;
+    }
+
+    .article {
+      position: relative;
+      width: 60vw;
+      margin: 20px auto;
+      box-shadow: 2px 1px 10px 2px rgba(100, 100, 100, .3);
+      background-color: white;
+    }
+
+    .post-time {
+      padding-top: 20px;
+      font-size: 24px;
+      margin-left: 30px;
+      height: 20px;
+    }
+
+    .article-tag {
+      display: flex;
+      position: absolute;
+      top: 22px;
+      left: 200px;
+    }
+
+    .article-tag::before {
+      content: "";
+      display: block;
+      margin-left: -5px;
+      margin-top: 1px;
+      height: 24px;
+      border-left: 1px solid rgba(100, 100, 100, .3);
+      margin-right: 30px;
+      cursor: none;
+    }
+
+    .article-tag a {
+      flex: 1;
+      display: block;
+      padding: 0 15px 0 0;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: #7693b3;
+    }
+
+    .article-tag a span {
+      font-size: 16px;
+      margin-top: 4px;
+      margin-right: 2px;
+      font-weight: bold;
+    }
+
+    .post-time::after {
+      content: "";
+      display: block;
+      margin-top: -2px;
+      margin-left: 14px;
+      width: 120px;
+      border-bottom: 3px solid #4A6785;
+    }
+
+    .article-title {
+      padding: 40px 80px 0;
+      font-size: 18px;
+    }
+
+    .article-title a {
+      text-decoration: none;
+      color: #355371;
+    }
+
+    .article-content {
+      padding: 15px 80px 30px;
+      font-size: 14px;
+      line-height: 1.8em;
+      overflow: hidden;
+    }
+  </style>
 </head>
 
 <body>
@@ -19,12 +100,12 @@
 
     <ul class="conv">
       <a class="home" href="./index.html">WUCH</a>
-      <a class="knowladge" href="Knowladge/index.html">集思广益</a></li>
-      <a class="mind" href="Mind/index.html">Break Brain Wall</a>
-      <a class="hack" href="Hack/index.html">黑客之道</a>
-      <a class="Happiness" href="Happiness/index.html">欢乐多更多</a>
-      <a class="mirror" href="Mirror/index.html">以人为镜</a>
-      <a class="content" href="Content/index.html">井井有条</a>
+      <a class="knowladge" href="/Knowladge/index.html">集思广益</a></li>
+      <a class="mind" href="/Mind/index.html">Break Brain Wall</a>
+      <a class="hack" href="/Hack/index.html">黑客之道</a>
+      <a class="Happiness" href="/Happiness/index.html">欢乐多更多</a>
+      <a class="mirror" href="/Mirror/index.html">以人为镜</a>
+      <a class="content" href="/Content/index.html">井井有条</a>
       <label for="chk" class="hide-menu-btn">
         <i class="fas fa-times"></i>
       </label>
@@ -34,18 +115,53 @@
 
 
   <!-- Article -->
-  <div class="article">
-    <article class="article-window">
-      <div class="article-text">
-        <header>
-          <h1>很抱歉，这里什么都没有。</h1>
-        </header>
-      </div>
-    </article>
-  </div>
-  <div class="navigator">
-    <div></div>
-  </div>
+  <section class="article">
+    <div class="post-time">
+      <span>2021-07-24</span>
+    </div>
+    <div class="article-tag">
+      <a href="#" class=""><span>#</span>测试</a>
+      <a href="#" class=""><span>#</span>测试</a>
+      <a href="#" class=""><span>#</span>测试</a>
+      <a href="#" class=""><span>#</span>测试</a>
+    </div>
+    <div class="article-title">
+      <a href="#">论自己写网页有多么辛苦</a>
+    </div>
+    <div class="article-content">
+      <!-- TODO Display the ellipsis at the end. -->
+      第一次设计自己的网站的真的非常困难，完全就是摸着石头过河。自己写的样式一点都不好看，也不知道怎么去设计一个好看的网页。果然这方面还有好多学习的地方，努力加油吧。
+    </div>
+  </section>
+  <section class="article">
+    <div class="post-time">
+      <span>xxxx-xx-xx</span>
+    </div>
+    <div class="article-tag">
+      <a href="#" class="">#xxx</a>
+    </div>
+    <div class="article-title">
+      <a href="#">xxx</a>
+    </div>
+    <div class="article-content">
+      xxx
+    </div>
+  </section>
+  <section class="article">
+    <div class="post-time">
+      <span>xxxx-xx-xx</span>
+    </div>
+    <div class="article-tag">
+      <a href="#" class="">#xxx</a>
+    </div>
+    <div class="article-title">
+      <a href="#">xxx</a>
+    </div>
+    <div class="article-content">
+      xxx
+    </div>
+  </section>
+
 
 
 </body>
