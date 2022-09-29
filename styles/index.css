@@ -2,10 +2,14 @@
     background: #EEEEEE;
   }
 
-  .article {
+  .section-box {
     position: relative;
     width: 60vw;
-    margin: 20px auto;
+    margin: 18px auto;
+  }
+
+  .article {
+    margin: 22px auto;
     box-shadow: 2px 1px 10px 2px rgba(100, 100, 100, .3);
     background-color: white;
   }
@@ -18,9 +22,10 @@
 
   .article-tag {
     display: flex;
-    position: absolute;
-    top: 22px;
-    left: 200px;
+    position: relative;
+    width: 280px;
+    top: -25px;
+    left: 185px;
   }
 
   .article-tag::before {
@@ -30,24 +35,24 @@
     margin-top: 1px;
     height: 24px;
     border-left: 1px solid rgba(100, 100, 100, .3);
-    margin-right: 30px;
+    margin-right: 15px;
     cursor: none;
   }
 
   .article-tag a {
-    flex: 1;
+    margin-right: 15px;
     display: block;
-    padding: 0 15px 0 0;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 700;
     color: #7693b3;
   }
 
   .article-tag a span {
-    font-size: 16px;
-    margin-top: 4px;
-    margin-right: 2px;
+    font-size: 14px;
+    position: relative;
+    margin-right: 1px;
+    top: 2px;
     font-weight: bold;
   }
 
@@ -61,7 +66,7 @@
   }
 
   .article-title {
-    padding: 40px 80px 0;
+    padding: 5px 80px 0;
   }
 
   .article-title a {
@@ -72,10 +77,21 @@
   }
 
   .article-content {
-    padding: 15px 80px 30px;
+    padding: 10px 80px 20px;
+    height: 110px;
     font-size: 14px;
-    line-height: 1.8em;
     overflow: hidden;
+  }
+
+  .article-content p {
+    line-height: 1.6em;
+    height: 90px;
+    overflow: hidden;
+  }
+
+  .article-content p::first-letter
+  {
+    padding-left: 2em;
   }
 
 @media screen and (max-width: 800px) {
@@ -115,7 +131,6 @@
   }
 
   .article-title a {
-    font-size: 16px;
     font-weight: 600;
   }
 
