@@ -1,0 +1,54 @@
+baseURL = 'https://iexpectation.github.io/'
+locale = 'en-us'
+title = 'Cheng Wu'
+theme = 'hugo-toigian'
+# enableGitInfo = true
+
+[params]
+  toc = true
+  comments = true
+
+[params.author]
+  name = "Cheng Wu"
+  email = "wuchx19@gmail.com"
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+        [markup.highlight]
+          codeFences = true
+          guessSyntax = true
+          lineNos = false
+          noClasses = false
+          tabWidth = 4
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = true
+
+[menu]
+  [[menu.nav]]
+    name = "About"
+    url = "/about"
+    weight = 2
+
+  [[menu.nav]]
+    name = "Posts"
+    url = "/posts"
+    weight = 3
+
+[security]
+  [security.node]
+    [security.node.permissions]
+      disable = true
+
+[build]
+  writeStats = true
+
+[frontmatter]
+  date = ['date', 'publishDate', 'lastmod']
+  expiryDate = ['expiryDate']
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']
