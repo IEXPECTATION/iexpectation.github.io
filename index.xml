@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Cheng Wu</title>
+		<link>http://localhost:1313/</link>
+		<description>Recent content on Cheng Wu</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+			<managingEditor>wuchx19@gmail.com (Cheng Wu)</managingEditor>
+		
+		
+			<webMaster>wuchx19@gmail.com (Cheng Wu)</webMaster>
+		
+		
+		
+			<lastBuildDate>Sun, 14 Jun 2026 21:08:29 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>About</title>
+				<link>http://localhost:1313/about/</link>
+				<pubDate>Sun, 14 Jun 2026 21:08:29 +0800</pubDate><author>wuchx19@gmail.com (Cheng Wu)</author>
+				<guid>http://localhost:1313/about/</guid>
+				<description>&lt;p&gt;My name is Cheng Wu, you can call wucheng(吴呈) as well. I am a test engineer working in Wuxi, Jiangsu.&lt;/p&gt;&#xA;&lt;p&gt;My favourite programming language is C/C++. But there are a lot of fantastic programming, suck as Python, Rust, Go, Java, C#, Js/Ts and so on. I like them as well.😁&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Contact Me:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Github: &lt;a href=&#34;https://github.com/IEXPECTATION&#34;&gt;https://github.com/IEXPECTATION&lt;/a&gt; &lt;br&gt;&#xA;E-mail: &lt;a href=&#34;mailto:wuchx19@gmail.com&#34;&gt;Google Email&lt;/a&gt;; &lt;a href=&#34;mailto:1120644453@qq.com&#34;&gt;QQ Email&lt;/a&gt; &lt;br&gt;&#xA;Bilibili: &lt;a href=&#34;https://space.bilibili.com/23777423&#34;&gt;https://space.bilibili.com/23777423&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
