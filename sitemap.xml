@@ -2,8 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://iexpectation.github.io/posts/js%E9%80%86%E5%90%91%E7%88%AC%E8%99%AB%E5%92%8Cboss%E7%9B%B4%E8%81%98/</loc>
+    <lastmod>2026-09-02T23:48:47+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://iexpectation.github.io/categories/</loc>
+  </url><url>
+    <loc>https://iexpectation.github.io/tags/</loc>
   </url>
 </urlset>
