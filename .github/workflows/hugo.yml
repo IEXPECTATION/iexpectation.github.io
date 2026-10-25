@@ -1,34 +1,38 @@
 name: Build and deploy
+
 env:
-  # Define tool versions
   DART_SASS_VERSION: 1.105.1
   GO_VERSION: 1.27.2
   HUGO_VERSION: 0.168.0
   NODE_VERSION: 24.21.0
-
-  # Set the build time zone
+  PNPM_VERSION: 9
   TZ: Asia/Shanghai
+
 on:
   push:
     branches:
       - master
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: false
+
 defaults:
   run:
     shell: bash
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
@@ -36,7 +40,7 @@ jobs:
 
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v6
+        uses: actions/configure-pages@v5
 
       - name: Create a local tools directory
         run: |
@@ -44,16 +48,22 @@ jobs:
 
       - name: Install Go
         if: hashFiles('go.mod') != ''
-        uses: actions/setup-go@v7
+        uses: actions/setup-go@v5
         with:
           go-version: ${{ env.GO_VERSION }}
           cache: false
 
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
       - name: Install Node.js
-        if: hashFiles('package-lock.json') != ''
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
+          cache: 'pnpm'
+          cache-dependency-path: 'themes/hugo-toigian/pnpm-lock.yaml'
 
       - name: Install Dart Sass
         run: |
@@ -77,6 +87,7 @@ jobs:
           command -v go &> /dev/null && echo "Go: $(go version)" || echo "Go: not installed"
           command -v hugo &> /dev/null && echo "Hugo: $(hugo version)" || echo "Hugo: not installed"
           command -v node &> /dev/null && echo "Node.js: $(node --version)" || echo "Node.js: not installed"
+          command -v pnpm &> /dev/null && echo "pnpm: $(pnpm --version)" || echo "pnpm: not installed"
 
       - name: Configure Git
         run: |
@@ -97,24 +108,34 @@ jobs:
             git submodule update --init --recursive
           fi
 
-      - name: Install Node.js dependencies
+      - name: Install theme dependencies and fix postcss
         run: |
-          if [[ -f package-lock.json ]]; then
-            echo "Installing Node.js dependencies..."
-            npm ci
-          fi
+          cd themes/hugo-toigian
+          pnpm install --frozen-lockfile
 
+          # require.resolve('postcss-cli') 返回 index.js，它就是 CLI 入口
+          REAL_POSTCSS=$(node -e "console.log(require.resolve('postcss-cli'))")
+          echo "Real postcss: ${REAL_POSTCSS}"
+          echo "Shebang: $(head -1 "${REAL_POSTCSS}")"
+
+          mkdir -p "${HOME}/.local/bin"
+          ln -sf "${REAL_POSTCSS}" "${HOME}/.local/bin/postcss"
+          echo "${HOME}/.local/bin" >> "${GITHUB_PATH}"
+
+          rm -f node_modules/.bin/postcss
+          ln -s "${REAL_POSTCSS}" node_modules/.bin/postcss
+
+          echo "=== verification ==="
+          head -1 "${HOME}/.local/bin/postcss"
+          head -1 node_modules/.bin/postcss
+          
       - name: Cache restore
         id: cache-restore
-        uses: actions/cache/restore@v6
+        uses: actions/cache/restore@v4
         with:
           path: ${{ runner.temp }}/.cache/hugo
           key: hugo-${{ github.run_id }}
           restore-keys: hugo-
-
-      - name: Install Node.js dependencies
-        run: |
-          npm install -D postcss postcss-cli autoprefixer postcss-import tailwindcss @tailwindcss/nesting
 
       - name: Build
         run: |
@@ -126,16 +147,17 @@ jobs:
             --cacheDir "${{ runner.temp }}/.cache/hugo"
 
       - name: Cache save
-        uses: actions/cache/save@v6
+        uses: actions/cache/save@v4
         with:
           path: ${{ runner.temp }}/.cache/hugo
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@v3
         with:
           include-hidden-files: false
           path: ./public
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -145,4 +167,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@v4
