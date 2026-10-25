@@ -52,3 +52,7 @@ theme = 'hugo-toigian'
   expiryDate = ['expiryDate']
   lastmod = [':git', 'lastmod', 'date', 'publishDate']
   publishDate = ['publishDate', 'date']
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
