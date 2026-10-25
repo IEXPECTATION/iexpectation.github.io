@@ -112,6 +112,10 @@ jobs:
           key: hugo-${{ github.run_id }}
           restore-keys: hugo-
 
+      - name: Install Node.js dependencies
+        run: |
+          npm install -D postcss postcss-cli autoprefixer
+
       - name: Build
         run: |
           echo "Building the project..."
