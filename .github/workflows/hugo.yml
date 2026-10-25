@@ -114,7 +114,7 @@ jobs:
 
       - name: Install Node.js dependencies
         run: |
-          npm install -D postcss postcss-cli autoprefixer postcss-import
+          npm install -D postcss postcss-cli autoprefixer postcss-import tailwindcss @tailwindcss/nesting
 
       - name: Build
         run: |
