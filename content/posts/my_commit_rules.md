@@ -1,9 +1,7 @@
 +++
 date = '2026-11-06T13:26:10+08:00'
-title = 'My_commit_rules'
+title = '吴呈的 Commit 规则'
 +++
-
-# 吴呈的 Commit 规则
 
 ## 一个 git 仓库由哪些组成？
 
